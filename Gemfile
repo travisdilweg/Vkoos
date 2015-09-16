@@ -6,6 +6,8 @@ gem 'kaminari'
 
 gem 'simple_form'
 
+gem 'devise', '>=3.2.4'
+
 gem 'sprockets', '2.11.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
