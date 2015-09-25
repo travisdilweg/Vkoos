@@ -14,14 +14,16 @@
         height: 300px;
       }
     </style>
+
+<% if @place.latitude.present? && @place.longitude.present? %>
    
     <script>
 
 function initMap() {
-  var myLatLng = {lat: -25.363, lng: 131.044};
+  var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
+    zoom: 12,
     center: myLatLng
   });
 
@@ -37,6 +39,10 @@ function initMap() {
         src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 
  <div id="map"></div>
+
+<% end %>
+
+<br />
 
 	<div class="pull-right">
 		<%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
